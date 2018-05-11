@@ -26,14 +26,14 @@ void loop()
       val1=analogRead(A0);   //connect grayscale sensor to Analog 0
       val2=analogRead(A1);   //connect grayscale sensor to Analog 0
 
-      int lightval = val1 - val2;
-      if (lightval > 20) {
+      int lightval = val1 - val2 + 30 ;
+      if (lightval < -20) {
         if (servoval < 180 && servoval > 0) {
           servoval+=2;
         } else if (servoval = 180){
           servoval = 178;
         }
-} else if (lightval < -20) {
+} else if (lightval > 20) {
         if (servoval < 180 && servoval > 0) {
           servoval-=2;
         } }
